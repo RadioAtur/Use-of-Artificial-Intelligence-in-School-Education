@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI and Teaching Student</title>
+    <style>
+        /* تنظیمات کلی */
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            overflow-y: scroll;
+        }
+
+        /* تنظیمات منو */
+        .navbar {
+			margin-top: 60px; /* تنظیم فاصله از جعبه بالا */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+        }
+
+        /* تنظیمات محتوای اصلی */
+        .content {
+			padding: 120px 20px 20px; /* تنظیم فاصله از جعبه بالا */
+            width: 50%;
+            padding: 80px 20px 20px;
+            overflow-y: auto;
+            box-sizing: border-box;
+        }
+
+        /* تنظیمات کانواس برای انیمیشن */
+        #sphereCanvas {
+            width: 50%;
+            height: 100vh;
+            background-color: #f5f5f5;
+            position: fixed; /* Set to fixed to stay in place */
+            right: 0;
+            top: 0;
+            overflow: hidden;
+            z-index: 1; /* Ensure it's behind the content */
+        }
+
+        /* تنظیمات جزییات و خلاصه مقاله */
+        details {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+		 /* جعبه بالا */
+        .top-box {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #627782; /* تغییر رنگ به رنگ مورد نظر */
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            z-index: 1001; /* قرار گرفتن بالاتر از سایر محتوا */
+        }
+				 /* Styling for the Button */
+        .top-box button {
+            background-color: #627782; /* Match the top box color */
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left; /* Left-align text inside button */
+        }
+		a {
+			color: white;
+			text-decoration: none;
+			font-weight: bold;
+	    }
+			a:hover {
+			color: White;
+			text-decoration: underline;
+	    }
+
+    </style>
+</head>
+<body>
+    <!-- جعبه بالا -->
+	<div class="top-box" style="display: flex; align-items: center; background-color: #627782;">
+		<button style="margin-right: 10px;"><a href="C:/Users/aseman/Desktop/Biofuel/main/ai-teaching-example.html">AI</a></button>
+		<span>Welcome to the AI and Teaching Student Page</span>
+	</div>
+    <!-- نوار ناوبری -->
+    <div class="content">
+        <h1>The effects of artificial intelligence applications in educational settings: Challenges and strategies</h1>
+        <details>
+            <summary>Highlights</summary>
+            <ul>
+                <li>Introduction</li>
+                <li>Section 1: Skills and Resources Needed for Designing AI Systems</li>
+                <li>Intelligence</li>
+                <li>Artificial</li>
+                <li>Section 2: Examples of AI Applications in Education</li>
+                <li>Section 3: The Use of Artificial Intelligence in Education: Advantages and Disadvantages</li>
+                <li>some reputable blogs and resources that explore the use of AI in education</li>
+                <li>Conclusion</li>
+            </ul>
+        </details>
+        <details>
+            <summary>Introduction</summary>
+            <p>In today's world, Artificial Intelligence (AI) has become a key tool for improving the learning and teaching process. This presentation
+            will explore the skills and resources needed to design AI systems, as well as examples of its applications in the field of education.</p>
+        </details>
+        <details>
+            <summary>Section 1: Skills and Resources Needed for Designing AI Systems</summary>
+            <ol>
+                <li> Basic Knowledge in Programming
+                    <ul>
+                        <li>Proficiency in programming languages like Python, R, or Java.</li>
+                        <li>Familiarity with relevant libraries such as TensorFlow, PyTorch, Keras, and Scikit-learn.</li>
+                    </ul>
+                </li>
+                <li> Mathematics and Statistics
+                    <ul>
+                        <li>A deep understanding of linear algebra, calculus, and statistics.</li>
+                        <li>Familiarity with probability concepts and distributions.</li>
+                    </ul>
+                </li>
+                <li> Machine Learning Concepts
+                    <ul>Understanding supervised and unsupervised learning algorithms.</ul>
+                    <ul>Deep knowledge of neural networks and deep learning.</ul>
+                </li>
+                <li> Data Handling
+                    <ul>
+                        <li> Ability to collect, clean, and process data.</li>
+                        <li> Familiarity with databases and query languages like SQL.</li>
+                    </ul>
+                </li>
+                <li> Data Analysis
+                <ul>
+                        <li> Ability to analyze and interpret data to extract patterns and insights.</li>
+                        <li> Use of data analysis tools like Pandas and NumPy.</li>
+                    </ul>
+                </li>
+                <li> Problem-Solving Skills
+                <ul>
+                        <li> Ability to identify problems and design appropriate solutions.</li>
+                        <li> Critical thinking and creativity when facing challenges.</li>
+                    </ul>
+                </li>
+                <li> Domain-Specific Knowledge
+                <ul>
+                        <li> Familiarity with the field where you want to implement AI (e.g., healthcare, finance, gaming, etc.).</li>
+                    </ul>
+                </li>
+                <li> Understanding Ethical Principles
+                <ul>
+                        <li>Awareness of ethical issues related to AI, including privacy, bias, and transparency.</li>
+                    </ul>
+                </li>
+                <li> Software Development
+                <ul>
+                        <li> Skills in software design and project management for implementing and maintaining AI systems.</li>
+                    </ul>
+                </li>
+                <li> Research and Continuous Learning
+                <ul>
+                        <li> Keeping up with the latest advancements and research in AI.</li>
+                    </ul>
+                </li>
+            </ol>
+             <div class="sketchfab-embed-wrapper"> <iframe title="HUD Brain Hologram" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/25ed09ee28404810a009df6f4b3a5fda/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/hud-brain-hologram-25ed09ee28404810a009df6f4b3a5fda?utm_medium=embed&utm_campaign=share-popup&utm_content=25ed09ee28404810a009df6f4b3a5fda" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> HUD Brain Hologram </a> by <a href="https://sketchfab.com/tkkjee?utm_medium=embed&utm_campaign=share-popup&utm_content=25ed09ee28404810a009df6f4b3a5fda" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> tkkjee </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=25ed09ee28404810a009df6f4b3a5fda" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
+        </details>
+        <details>
+            <summary>Section 2: Examples of AI Applications in Education</summary>
+            <ol>
+                <li> Professor David Klaus
+                    <ul>
+                        <li> A professor at the University of Colorado who uses AI to personalize student learning.</li>
+                        <li> Analyzing learning data to identify students' strengths and weaknesses.</li>
+                        <li> Suggesting educational resources tailored to each student's needs.</li>
+                        <li> Developing intelligent educational systems for generating exam questions and providing instant feedback.</li>
+                    </ul>
+                </li>
+                <li> Dr. Sonia Lopez
+                    <ul>
+                        <li> A researcher focused on the applications of AI in education and educational technologies.</li>
+                    </ul>
+                </li>
+                <li> Educational Platforms like Coursera and edX
+                    <ul> These platforms use AI algorithms to offer personalized online courses.</ul>
+                </li>
+                <li> Various Projects in Schools
+                    <ul>
+                        <li> Using AI software like "Knewton" and "DreamBox" to assist with learning math and science.</li>
+                    </ul>
+                </li>
+            </details>
+            <details>
+                <summary>Section 3: The Use of Artificial Intelligence in Education: Advantages and Disadvantages</summary>
+                <ul><p style=" font-size: 20px;">The use of artificial intelligence (AI) in education has its own specific benefits and drawbacks. Here are some of them:</p>
+                    <li><b>▎ Advantages of AI in Education:</b>
+                        <ol>
+                            <li><b> Personalized Learning:</b> AI can help identify students' strengths and weaknesses, allowing educational programs to be tailored to their individual needs.</li><br>
+                            <li><b> Accessibility:</b> With AI tools, education can become easier and more accessible for individuals with special needs or those in remote areas.</li><br>
+                            <li><b> Data Analysis:</b> AI can analyze educational data and identify learning patterns, helping to improve teaching methods.</li><br>
+                            <li><b> Interactive Learning:</b> AI-based tools can create more engaging and interactive learning experiences, such as simulations and educational games.</li><br>
+                            <li><b> Reduced Teacher Workload:</b> By automating some administrative tasks and assessments, teachers can spend more time on teaching and connecting with students.</li>
+                        </ol>
+                    </li><br>
+                    <li><b>▎ Disadvantages of AI in Education:</b>
+                        <ol>
+                            <li><b> Lack of Human Interaction:</b> Over-reliance on technology may reduce human interactions and social connections between students and teachers.</li><br>
+                            <li><b> Technology Limitations:</b> Some students may not have access to technology or may struggle to use it effectively.</li>
+                            <li><b> Privacy and Data Security:</b> Collecting personal data from students can raise concerns about privacy and security.</li>
+                            <li><b> Algorithmic Bias:</b> If AI algorithms are not designed properly, they may lead to discrimination or overlook the specific needs of different groups.</li>
+                            <li><b> Dependence on Technology:</b> Over-dependence on AI tools can lead to a decline in basic educational skills and critical thinking among students.</li>
+                        </ol>
+                <ul>
+                <p><b>Ultimately, the use of AI in education should be approached carefully, considering the specific needs and conditions of each educational environment to maximize its positive impact.</b></p>
+            </details>
+            <details>
+                <summary>Here are some reputable blogs and resources that explore the use of artificial intelligence in education:</summary>
+                <ol>
+                    <li><a href="https://www.edsurge.com/"> <b>EdSurge</b> </a>
+                        <p>This website examines educational technologies and the role of AI in learning.</p>
+                    </li>
+                    <li> <a href="https://edtechreview.in/"> <b>The EdTech Review</b> </a>
+                        <p> This blog looks at the latest trends and innovations in educational technology, including AI.</p>
+                        
+                    </li>
+                    <li><a href="https://learningwithai.com/"><b>Learning with AI</b></a>
+                        <p> This blog focuses on the applications of AI in learning and education.</p>
+    
+                    </li>
+                    <li><a href="https://www.aiineducation.com/"><b>Learning with AI</b></a>
+                        <p> This blog specifically explores the impacts and applications of AI in education.</p>
+                        
+                    </li>
+                    <li><a href="https://edtechmagazine.com/"> <b>EdTech Magazine</b></a>
+                        <p> This website reviews modern technologies in education, including AI.</p>
+                        
+                    </li>
+                </ol>
+            </details>
+    </div>
+    <canvas id="sphereCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('sphereCanvas');
+        const ctx = canvas.getContext('2d');
+        const dots = [];
+        const numDots = 200;
+        let mouseX = canvas.width / 2;
+        let mouseY = canvas.height / 2;
+
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight;
+
+        class Dot {
+            constructor(x, y, z) {
+                this.originalPosition = { x, y, z };
+                this.position = { x, y, z };
+                this.size = Math.random() * 2.5 + 1.5;
+            }
+
+            update() {
+                const distance = Math.sqrt((this.position.x - mouseX) ** 2 + (this.position.y - mouseY) ** 2);
+                if (distance < 120) {
+                    const angle = Math.atan2(this.position.y - mouseY, this.position.x - mouseX);
+                    this.position.x += Math.cos(angle) * 5;
+                    this.position.y += Math.sin(angle) * 5;
+                } else {
+                    this.position.x += (this.originalPosition.x - this.position.x) * 0.1;
+                    this.position.y += (this.originalPosition.y - this.position.y) * 0.1;
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = 'black';
+                ctx.beginPath();
+                ctx.arc(this.position.x, this.position.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            drawLineTo(otherDot) {
+                ctx.strokeStyle = '#0f0f0f';
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                ctx.moveTo(this.position.x, this.position.y);
+                ctx.lineTo(otherDot.position.x, otherDot.position.y);
+                ctx.stroke();
+            }
+        }
+
+        for (let i = 0; i < numDots; i++) {
+            const theta = Math.acos(Math.random() * 2 - 1);
+            const phi = Math.random() * Math.PI * 2;
+            const x = 200 * Math.sin(theta) * Math.cos(phi);
+            const y = 200 * Math.sin(theta) * Math.sin(phi);
+            const z = 200 * Math.cos(theta);
+            dots.push(new Dot(x + canvas.width / 2, y + canvas.height / 2, z));
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            dots.forEach(dot => {
+                dot.update();
+                dot.draw();
+            });
+
+            for (let i = 0; i < dots.length; i++) {
+                for (let j = i + 1; j < dots.length; j++) {
+                    const distance = Math.sqrt((dots[i].position.x - dots[j].position.x) ** 2 +
+                                               (dots[i].position.y - dots[j].position.y) ** 2);
+                    if (distance < 100) {
+                        dots[i].drawLineTo(dots[j]);
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        canvas.addEventListener('mousemove', (event) => {
+            mouseX = event.clientX - canvas.offsetLeft;
+            mouseY = event.clientY - canvas.offsetTop;
+        });
+
+        animate();
+    </script>
+</body>
+</html>
